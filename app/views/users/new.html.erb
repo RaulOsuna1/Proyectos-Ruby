@@ -1,0 +1,9 @@
+<%= form_for(@users) do |f|  %>
+    <div>
+        <%=  f.text_field :email, placeholder: "Email",class: "form-control" %>
+    </div>
+    <div>
+        <%=  f.text_field :age, placeholder: "Edad",class: "form-control" %>
+    </div>
+    <%= f.submit "guardar", class: "btn"%>
+<%end%>
