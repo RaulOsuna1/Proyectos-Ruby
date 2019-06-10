@@ -1,4 +1,7 @@
 <%= form_for(@users) do |f|  %>
+    <% @users.errors.full_messages.each do |message| %>
+     * <%= message %>
+    <% end %>
     <div>
         <%=  f.text_field :email, placeholder: "Email",class: "form-control" %>
     </div>

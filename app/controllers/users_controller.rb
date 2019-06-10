@@ -10,8 +10,13 @@ class UsersController < ApplicationController
    end
    def create
        @users = User.new(email: params[:user][:email],age: params[:user][:age])
-       @users.save
-       redirect_to @users
+       if @users.save
+            redirect_to @users
+       else 
+            render :new
+       end
+       
+       
    end
    
 end

@@ -1,5 +1,10 @@
 <h1>Crear articulo</h1>
 <%= form_for(@articles) do |f| %> 
+  <% @articles.errors.full_messages.each do |message| %>
+    <div>
+      *<%= message%>
+    </div>
+  <%end%>
   <div>
     <%=  f.text_field :title, placeholder: "titulo",class: "form-control" %>
   </div>
