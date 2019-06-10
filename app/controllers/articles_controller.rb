@@ -25,8 +25,20 @@ class ArticlesController < ApplicationController
         redirect_to articles_path
     end
 
+    def edit 
+        @articles=Article.find(
+            params[:id]
+        )
+    end
     def update 
-        
+        @articles=Article.find(
+            params[:id]
+        )
+        if @articles.update(article_params)
+            redirect_to @articles
+        else     
+            render :edit
+        end
     end
 
     private
